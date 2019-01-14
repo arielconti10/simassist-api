@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 Route::post('register', 'API\RegisterController@register');
+
+Route::resource('clients', 'API\ClientController')->except(['create', 'edit']);
+
 Route::middleware('auth:api')->get('/test', function(){
     return 'aaa';
 });
@@ -21,7 +24,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:api')->group( function () {
-    Route::resource('clients', 'API\ClientController')->except(['create', 'edit']);
 
     Route::post('document', 'API\DocumentController@create');
     Route::get('document/{client_id}', 'API\DocumentController@show');

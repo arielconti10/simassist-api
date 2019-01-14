@@ -54,7 +54,7 @@ class ClientController extends BaseController
      */
     public function show($id)
     {
-        $client = Clients::find($id);
+        $client = Client::find($id);
 
         if (is_null($client)) {
             return $this->sendError('Client not found.');

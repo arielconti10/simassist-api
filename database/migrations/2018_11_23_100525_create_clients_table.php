@@ -18,8 +18,10 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('mother_name');
             $table->string('document');
-            $table->date('birth_date');
+            $table->string('birth_date');
             $table->string('telephone');
+            $table->string('contract_type');
+            $table->string('status');
             $table->string('email')->unique();
             $table->timestamps();
         });

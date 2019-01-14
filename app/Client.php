@@ -16,8 +16,10 @@ class Client extends Model
         'document',
         'mother_name',
         'email',
+        'contract_type',
         'birth_date',
         'telephone',
+        'status'
     ];
 
     public function address(){
